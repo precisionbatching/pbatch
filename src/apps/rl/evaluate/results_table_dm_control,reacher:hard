@@ -1,0 +1,17 @@
+dm_control,reacher:hard,cutlass,32,32,32,32,32,32,959.000000,0.250502
+dm_control,reacher:hard,cutlass,16,16,16,16,16,16,935.000000,0.087039
+dm_control,reacher:hard,cutlass,8,8,8,8,8,8,991.000000,0.050813
+dm_control,reacher:hard,cutlass,4,4,4,4,4,4,964.000000,0.042826
+dm_control,reacher:hard,cutlass,1,1,1,1,1,1,0.000000,0.047118
+dm_control,reacher:hard,pbatch,16,32,16,32,16,32,993.000000,0.126281
+dm_control,reacher:hard,pbatch,16,16,16,16,16,16,994.000000,0.090898
+dm_control,reacher:hard,pbatch,16,8,16,8,16,8,5.000000,0.072944
+dm_control,reacher:hard,pbatch,8,32,8,32,8,32,990.000000,0.071980
+dm_control,reacher:hard,pbatch,8,16,8,16,8,16,962.000000,0.052115
+dm_control,reacher:hard,pbatch,8,8,8,8,8,8,20.000000,0.042288
+dm_control,reacher:hard,pbatch,4,32,4,32,4,32,952.000000,0.043641
+dm_control,reacher:hard,pbatch,4,16,4,16,4,16,926.000000,0.033195
+dm_control,reacher:hard,pbatch,4,8,4,8,4,8,0.000000,0.034683
+dm_control,reacher:hard,pbatch,1,32,1,32,1,32,0.000000,0.031600
+dm_control,reacher:hard,pbatch,1,16,1,16,1,16,0.000000,0.031843
+dm_control,reacher:hard,pbatch,1,8,1,8,1,8,0.000000,0.032034

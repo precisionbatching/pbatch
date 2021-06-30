@@ -1,0 +1,17 @@
+dm_control,humanoid:stand,cutlass,32,32,32,32,32,32,817.560302,0.255732
+dm_control,humanoid:stand,cutlass,16,16,16,16,16,16,735.714230,0.088424
+dm_control,humanoid:stand,cutlass,8,8,8,8,8,8,892.143575,0.050788
+dm_control,humanoid:stand,cutlass,4,4,4,4,4,4,70.323124,0.038404
+dm_control,humanoid:stand,cutlass,1,1,1,1,1,1,5.058803,0.046548
+dm_control,humanoid:stand,pbatch,16,32,16,32,16,32,835.816070,0.131937
+dm_control,humanoid:stand,pbatch,16,16,16,16,16,16,825.605478,0.093900
+dm_control,humanoid:stand,pbatch,16,8,16,8,16,8,6.485925,0.075809
+dm_control,humanoid:stand,pbatch,8,32,8,32,8,32,807.019177,0.074132
+dm_control,humanoid:stand,pbatch,8,16,8,16,8,16,684.501534,0.054084
+dm_control,humanoid:stand,pbatch,8,8,8,8,8,8,1.698264,0.043758
+dm_control,humanoid:stand,pbatch,4,32,4,32,4,32,391.918311,0.044685
+dm_control,humanoid:stand,pbatch,4,16,4,16,4,16,470.868960,0.034705
+dm_control,humanoid:stand,pbatch,4,8,4,8,4,8,7.215315,0.034888
+dm_control,humanoid:stand,pbatch,1,32,1,32,1,32,5.700702,0.025075
+dm_control,humanoid:stand,pbatch,1,16,1,16,1,16,8.425840,0.032100
+dm_control,humanoid:stand,pbatch,1,8,1,8,1,8,3.083900,0.031714

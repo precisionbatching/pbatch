@@ -1,0 +1,17 @@
+dm_control,cheetah:run,cutlass,32,32,32,32,32,32,701.109262,0.254497
+dm_control,cheetah:run,cutlass,16,16,16,16,16,16,694.533159,0.086160
+dm_control,cheetah:run,cutlass,8,8,8,8,8,8,724.175300,0.050788
+dm_control,cheetah:run,cutlass,4,4,4,4,4,4,644.719393,0.042856
+dm_control,cheetah:run,cutlass,1,1,1,1,1,1,0.728864,0.041222
+dm_control,cheetah:run,pbatch,16,32,16,32,16,32,725.729390,0.125808
+dm_control,cheetah:run,pbatch,16,16,16,16,16,16,692.762263,0.089432
+dm_control,cheetah:run,pbatch,16,8,16,8,16,8,3.836717,0.072848
+dm_control,cheetah:run,pbatch,8,32,8,32,8,32,694.362053,0.071865
+dm_control,cheetah:run,pbatch,8,16,8,16,8,16,713.034423,0.052480
+dm_control,cheetah:run,pbatch,8,8,8,8,8,8,4.987306,0.041659
+dm_control,cheetah:run,pbatch,4,32,4,32,4,32,685.764642,0.043729
+dm_control,cheetah:run,pbatch,4,16,4,16,4,16,704.388976,0.034560
+dm_control,cheetah:run,pbatch,4,8,4,8,4,8,5.602237,0.035104
+dm_control,cheetah:run,pbatch,1,32,1,32,1,32,1.060090,0.032282
+dm_control,cheetah:run,pbatch,1,16,1,16,1,16,0.947634,0.026381
+dm_control,cheetah:run,pbatch,1,8,1,8,1,8,6.107219,0.024896

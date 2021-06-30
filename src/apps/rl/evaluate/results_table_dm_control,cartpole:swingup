@@ -1,0 +1,17 @@
+dm_control,cartpole:swingup,cutlass,32,32,32,32,32,32,854.372159,0.255313
+dm_control,cartpole:swingup,cutlass,16,16,16,16,16,16,854.236889,0.088172
+dm_control,cartpole:swingup,cutlass,8,8,8,8,8,8,849.561960,0.050524
+dm_control,cartpole:swingup,cutlass,4,4,4,4,4,4,792.610135,0.042858
+dm_control,cartpole:swingup,cutlass,1,1,1,1,1,1,151.228889,0.041658
+dm_control,cartpole:swingup,pbatch,16,32,16,32,16,32,852.813359,0.125958
+dm_control,cartpole:swingup,pbatch,16,16,16,16,16,16,852.058943,0.092149
+dm_control,cartpole:swingup,pbatch,16,8,16,8,16,8,176.465054,0.071937
+dm_control,cartpole:swingup,pbatch,8,32,8,32,8,32,852.792503,0.071628
+dm_control,cartpole:swingup,pbatch,8,16,8,16,8,16,853.053295,0.052648
+dm_control,cartpole:swingup,pbatch,8,8,8,8,8,8,169.535273,0.042460
+dm_control,cartpole:swingup,pbatch,4,32,4,32,4,32,837.573584,0.043876
+dm_control,cartpole:swingup,pbatch,4,16,4,16,4,16,838.604843,0.034698
+dm_control,cartpole:swingup,pbatch,4,8,4,8,4,8,123.519179,0.027443
+dm_control,cartpole:swingup,pbatch,1,32,1,32,1,32,482.175979,0.026634
+dm_control,cartpole:swingup,pbatch,1,16,1,16,1,16,408.803392,0.032045
+dm_control,cartpole:swingup,pbatch,1,8,1,8,1,8,5.100273,0.025061
