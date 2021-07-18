@@ -52,8 +52,8 @@ parser.add_argument("--pretrained", type=str, default=None)
 
 #############################################################
 
-parser.add_argument('--W_bits', type=int, default=8)
-parser.add_argument('--A_bits', type=int, default=8)
+parser.add_argument('--W_bits', type=int, default=32)
+parser.add_argument('--A_bits', type=int, default=32)
 
 parser.add_argument("--logfile", type=str, default="savedata/logfiles/default_logfile")
 parser.add_argument("--model_dir", type=str, default="savedata/models/default_model_dir")
