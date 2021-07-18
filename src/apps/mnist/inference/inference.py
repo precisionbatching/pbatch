@@ -127,6 +127,6 @@ def performance_eval():
 acc = mnist_eval()
 elapsed = performance_eval()
 
-print("%f,%f" % (acc,elapsed))
+print("module,mnist,%s,%d,%d,%f,%f" % (method, W_bits, A_bits, acc,elapsed))
 
 

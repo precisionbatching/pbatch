@@ -48,23 +48,19 @@ def read_data(fpath):
                 continue
             datapoint = line.split(",")
             try:
-                module,task,method,W1,A1,W2,A2,W3,A3,score,time = datapoint
+                module,task,method,W1,A1,score,time = datapoint
             except:
                 continue
-            W1,A1,W2,A2,W3,A3 = tuple([int(x) for x in [W1,A1,W2,A2,W3,A3]])
-            if method == "cutlass" and W1 == 32 and W2 == 32 and W3 == 32:
+            W1,A1 = tuple([int(x) for x in [W1,A1]])
+            if method == "cutlass" and W1 == 32:
                 assert(W1 == 32)
-                assert(W2 == 32)
-                assert(W3 == 32)
                 assert(A1 == 32)
-                assert(A2 == 32)
-                assert(A3 == 32)
                 fp32_time = float(time)
             score,time = float(score), float(time)
-            d.append([method,W1,A1,W2,A2,W3,A3,score,time])
+            d.append([method,W1,A1,score,time])
     dd = []
     for d_point in d:
-        method,_,_,_,_,_,_,score,time = d_point
+        method,_,_,score,time = d_point
         dd.append([method,score,fp32_time/time])
     print(dd)
     return dd
@@ -95,7 +91,7 @@ def plot_data(variable_data):
              label="Cutlass", marker="o", linewidth=5, markersize=10, color="red", linestyle="-")
 
     # Adjust window
-    plt.axis([400,800,2.5,8]) 
+    #plt.axis([400,800,2.5,8]) 
 
 data_path, out = sys.argv[1], sys.argv[2]
 data = read_data(data_path)
