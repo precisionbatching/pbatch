@@ -205,8 +205,6 @@ if __name__ == "__main__":
     model.eval()    
 
     test_ppl = math.exp(evaluate(test_data))
-    #perf = perf_bench(train_data)
-    perf = 9
-
+    perf = perf_bench(train_data)
 
     print("module,mnist,%s,%d,%d,%f,%f" % (args.method, args.W_bits, args.A_bits, test_ppl, perf))

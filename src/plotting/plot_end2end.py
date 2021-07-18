@@ -44,6 +44,8 @@ def read_data(fpath):
     with open(fpath, "r") as f:
         for line in f.readlines():
             line = line.strip()
+            if "approximation" in line:
+                continue
             if line == "":
                 continue
             datapoint = line.split(",")
@@ -66,7 +68,7 @@ def read_data(fpath):
     return dd
     
 
-def plot_data(variable_data):
+def plot_data(variable_data, negate=False):
     plt.cla()
     pbatch_data = [x for x in variable_data if x[0] == "pbatch"]
     cutlass_data = [x for x in variable_data if x[0] == "cutlass"]
@@ -77,8 +79,8 @@ def plot_data(variable_data):
     pbatch_metric_and_speedups = sorted(pbatch_metric_and_speedups, key=lambda x:x[1])
     cutlass_metric_and_speedups = sorted(cutlass_metric_and_speedups, key=lambda x:x[1])
 
-    pbatch_metric_and_speedups = get_pareto_points(pbatch_metric_and_speedups)
-    cutlass_metric_and_speedups = get_pareto_points(cutlass_metric_and_speedups)
+    pbatch_metric_and_speedups = get_pareto_points(pbatch_metric_and_speedups, negate=negate)
+    cutlass_metric_and_speedups = get_pareto_points(cutlass_metric_and_speedups, negate=negate)
 
     print(pbatch_metric_and_speedups)
     print(cutlass_metric_and_speedups)
@@ -96,7 +98,12 @@ def plot_data(variable_data):
 data_path, out = sys.argv[1], sys.argv[2]
 data = read_data(data_path)
 
-plot_data(data)
+if len(sys.argv) > 3:
+    negate = int(sys.argv[3])
+else:
+    negate = 0
+
+plot_data(data, negate=negate)
 
 plt.ylabel("End-to-End Speedup vs FP32", fontsize=20)
 plt.xlabel("Average Reward", fontsize=20)

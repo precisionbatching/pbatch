@@ -17,8 +17,8 @@ class LSTM(nn.Module):
         self.batch_first = batch_first
         self.dropout = nn.Dropout(p=dropout)
 
-        self.input_weights = QLinear(input_size, 4 * hidden_size, W_bits=W_bits, A_bits=A_bits, method=method, optimize_cutoff=False)
-        self.hidden_weights = QLinear(hidden_size, 4 * hidden_size, W_bits=W_bits, A_bits=A_bits, method=method, optimize_cutoff=False)
+        self.input_weights = QLinear(input_size, 4 * hidden_size, W_bits=W_bits, A_bits=A_bits, method=method, optimize_cutoff=True)
+        self.hidden_weights = QLinear(hidden_size, 4 * hidden_size, W_bits=W_bits, A_bits=A_bits, method=method, optimize_cutoff=True)
 
     def forward(self, input, hidden):
         """Propogate input through the network."""
