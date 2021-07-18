@@ -196,7 +196,7 @@ class CutlassLinear(torch.nn.Module):
     def _load_from_state_dict(self, state_dict, prefix, local_metadata, strict,
                               missing_keys, unexpected_keys, error_msgs):
         # For the target weight, pad with zeros if shape mismatch
-        prefix = prefix.split(".")[0] + "."
+        prefix = ".".join(prefix.split(".")[:-2]) + "."        
         weight_key = prefix + "weight"
         weight_npy = np.zeros(self.weight.size())
         state_dict_npy = state_dict[weight_key].detach().cpu().numpy()

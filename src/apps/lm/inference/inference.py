@@ -50,9 +50,9 @@ parser.add_argument('--nhead', type=int, default=2,
 
 ###################
 
-parser.add_argument("--method", type=str, default="cutlass", choices=["cutlass","pbatch","fake"])
-parser.add_argument("--W_bits", type=int, default=32)
-parser.add_argument("--A_bits", type=int, default=32);
+parser.add_argument("--method", type=str, default="pbatch", choices=["cutlass","pbatch","fake"])
+parser.add_argument("--W_bits", type=int, default=8)
+parser.add_argument("--A_bits", type=int, default=8)
 
 criterion = nn.CrossEntropyLoss()
 
@@ -99,7 +99,6 @@ def Q_opt(W, n):
 
     W_begin = PQ_rounded(W,n)
     W_begin_err = np.linalg.norm(W_begin-W)
-    print("Beging err:", W_begin_err)
     
     maximum = np.max(np.abs(W))
     sgn = np.sign(W)
@@ -111,7 +110,6 @@ def Q_opt(W, n):
         if cur_err <= best_err:
             best_err = cur_err
             best_W = cur
-            print(best_err)
     return best_W
 
 corpus = data.Corpus(args.data)
@@ -162,6 +160,7 @@ def evaluate(data_source):
                 hidden = repackage_hidden(hidden)
             output_flat = output.view(-1, ntokens)
             total_loss += len(data) * criterion(output_flat, targets).item()
+            #sys.exit(0)
     return total_loss / (len(data_source) - 1)
 
 def perf_bench(data_source):
@@ -189,6 +188,7 @@ if __name__ == "__main__":
     ntokens = len(corpus.dictionary)    
     model = model.RNNModel(args.model, ntokens, args.emsize, args.nhid, args.nlayers, args.dropout, args.tied, method=args.method,
                            W_bits=args.W_bits, A_bits=args.A_bits).to(device)
+    
     # Load the best saved model.
     with open(args.save, 'rb') as f:
         state_dict = torch.load(f)
@@ -205,11 +205,8 @@ if __name__ == "__main__":
     model.eval()    
 
     test_ppl = math.exp(evaluate(test_data))
-    perf = perf_bench(train_data)
+    #perf = perf_bench(train_data)
+    perf = 9
 
-    if args.qmethod == "cutlass":
-        print("%s: q=%d ppl=%f perf=%f" % (args.qmethod, args.q, test_ppl, perf))
-    elif args.qmethod == "pbatch":
-        print("%s: q=%d a=%d ppl=%f perf=%f" % (args.qmethod, args.q, args.act_bits, test_ppl, perf))
-    else:
-        print("%s: ppl=%f perf=%f" % (args.qmethod, test_ppl, perf))
+
+    print("module,mnist,%s,%d,%d,%f,%f" % (args.method, args.W_bits, args.A_bits, test_ppl, perf))

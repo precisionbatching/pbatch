@@ -13,8 +13,8 @@ class RNNModel(nn.Module):
                  method="fake"):
         super(RNNModel, self).__init__()
 
-        print("RNNModel: rnn_type=%s, ntoken=%d, ninp=%d, nhid=%d" %
-              (rnn_type, ntoken, ninp, nhid))
+        #print("RNNModel: rnn_type=%s, ntoken=%d, ninp=%d, nhid=%d" %
+        #      (rnn_type, ntoken, ninp, nhid))
         
         self.drop = nn.Dropout(dropout)
         self.encoder = nn.Embedding(ntoken, ninp)
