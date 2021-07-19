@@ -7,8 +7,8 @@ import torch.optim as O
 import torch.nn as nn
 import json
 
-from torchtext import data
-from torchtext import datasets
+from torchtext.legacy import data
+from torchtext.legacy import datasets
 
 from model import SNLIClassifier
 from util import get_args, makedirs
@@ -23,7 +23,7 @@ if not os.path.exists(os.path.dirname(args.logfile)):
 if not os.path.exists(args.model_dir):
     os.makedirs(args.model_dir, exist_ok=True)
 
-args.save = "%s/W1_bits=%d_A1_bits=%d_W2_bits=%d_A2_bits=%d" % (args.model_dir, args.W1_bits, args.A1_bits, args.W2_bits, args.A2_bits)
+args.save = "models/model.ckpt"
 
 logdata = {
     "args" : vars(args),
@@ -124,6 +124,10 @@ for epoch in range(args.epochs):
         # evaluate performance on validation set periodically
         if iterations % args.dev_every == 0:
 
+            # Instead, save model to our path
+            with open(args.save, "wb") as f:
+                torch.save(model.state_dict(), f)
+            
             # switch model to evaluation mode
             model.eval(); dev_iter.init_epoch()
 
@@ -168,10 +172,6 @@ for epoch in range(args.epochs):
                 #for f in glob.glob(snapshot_prefix + '*'):
                 #    if f != snapshot_path:
                 #        os.remove(f)
-
-                # Instead, save model to our path
-                with open(args.save) as f:
-                    torch.save(model.state_dict(), f)
 
         elif iterations % args.log_every == 0:
 
