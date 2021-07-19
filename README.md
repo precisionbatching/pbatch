@@ -1,20 +1,52 @@
-# PBatch
+# PrecisionBatching
+
+# Overview
+This repository contains the source code for PrecisionBatching: Bitserial Decomposition for Efficient Neural Network Inference on GPUs.
+
+# Hardware Requirements
+For general reproducibility, run on a T4 gpu (or a GPU with architecture cc7.5).
+
+# Install Conda Environment
+```
+conda create -n pbatch --file conda_req.txt
+```
 
 # Install PrecisionBatching & Cutlass Kernels
-Add to pythonpaths:
+
+Activate conda environment:
+```
+conda activate pbatch
+```
+
+Add code to pythonpaths:
 ```
 source setup.sh
 ```
 
-PrecisionBatching:
+Install pbatch and cutlass kernels:
 ```
-pushd src/pytorch/cpp/pbatch/; bash install.sh; popd
+bash install.sh
 ```
 
-Cutlass:
+# Running
+
+## Kernel Benchmarks
+
+Outputs the kernel benchmark speedups (Table 1 in the paper).
 ```
-pushd src/pytorch/cpp/cutlass_linear/; bash install.sh; popd
+bash scripts/kernel_performance.sh
 ```
+
+## End to End Inference Speedups
+
+``bash scripts/mnist_inference.sh```
+``bash scripts/lm_inference.sh```
+``bash scripts/snli_inference.sh```
+
+These output [mnist|lm|snli].pdf which shows the end to end speedups of pbatch vs standard quantized inference (Figure 4 in the paper).
+Note to avoid long running times, we evaluate architectures where each layer has the same weight and activation precision (hence only PBatch/Cutlass Uniform is outputted).
+
+Note, we do not provide scripts for the RL tasks, as running these tasks required a paid license (Mujoco); however, our source code for these tasks are in the repository.
 
 # Main PrecisionBatching Kernel Files
 
