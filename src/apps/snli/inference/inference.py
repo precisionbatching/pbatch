@@ -78,6 +78,7 @@ config = args
 config.n_embed = len(inputs.vocab)
 config.d_out = len(answers.vocab)
 config.n_cells = config.n_layers
+config.birnn = False
 
 # double the number of cells for bidirectional networks
 if config.birnn:
@@ -107,7 +108,6 @@ def compute_dev_acc(model):
                 truth = test_batch.label[i].cpu().numpy().flatten()
                 n_test_correct += np.sum(pred == truth)
                 k += 1
-                #print(n_test_correct / k)
                 #n_test_correct += (torch.max(answer, 1)[1].view(test_batch.label.size()) == test_batch.label).sum().item()
     #print(n_test_correct)
     test_acc = 100. * n_test_correct / len(test)
@@ -145,7 +145,8 @@ model = SNLIClassifier(config, **kwargs).cuda()
 
 # Load model
 with open(args.model_path, "rb") as f:
-    sd = torch.load(f).state_dict()
+    sd = torch.load(f)
+    print(sd.keys())
 model.load_state_dict(sd)
 model.eval()
 
