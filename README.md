@@ -10,6 +10,9 @@ For general reproducibility, run on a T4 gpu (or a GPU with architecture cc7.5).
 ```
 conda create -n pbatch --file conda_req.txt
 ```
+```
+pip install -r pip_req.txt
+```
 
 # Install PrecisionBatching & Cutlass Kernels
 
