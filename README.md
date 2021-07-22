@@ -45,11 +45,11 @@ bash scripts/kernel_performance.sh
 
 ## End to End Inference Speedups
 
-``bash scripts/mnist_inference.sh```
-``bash scripts/lm_inference.sh```
-``bash scripts/snli_inference.sh```
+```bash scripts/mnist_inference.sh```
+```bash scripts/lm_inference.sh```
+```bash scripts/snli_inference.sh```
 
-These output [mnist|lm|snli].pdf which shows the end to end speedups of pbatch vs standard quantized inference (Figure 4 in the paper).
+These output [mnist|lm|snli].pdf which shows the end to end speedups of pbatch vs standard quantized inference (Figure 4 in the paper). These also output [task]_out which shows the run configuration and scores for each corresponding plot.
 Note to avoid long running times, we evaluate architectures where each layer has the same weight and activation precision (hence only PBatch/Cutlass Uniform is outputted).
 
 Note, we do not provide scripts for the RL tasks, as running these tasks required a paid license (Mujoco); however, our source code for these tasks are in the repository.
