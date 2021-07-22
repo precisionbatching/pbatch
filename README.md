@@ -46,7 +46,9 @@ bash scripts/kernel_performance.sh
 ## End to End Inference Speedups
 
 ```bash scripts/mnist_inference.sh```
+
 ```bash scripts/lm_inference.sh```
+
 ```bash scripts/snli_inference.sh```
 
 These output [mnist|lm|snli].pdf which shows the end to end speedups of pbatch vs standard quantized inference (Figure 4 in the paper). These also output [task]_out which shows the run configuration and scores for each corresponding plot.
