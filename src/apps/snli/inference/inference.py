@@ -108,9 +108,12 @@ def compute_dev_acc(model):
                 truth = test_batch.label[i].cpu().numpy().flatten()
                 n_test_correct += np.sum(pred == truth)
                 k += 1
+                if k >= 1000:
+                    # Early exit
+                    break
                 #n_test_correct += (torch.max(answer, 1)[1].view(test_batch.label.size()) == test_batch.label).sum().item()
     #print(n_test_correct)
-    test_acc = 100. * n_test_correct / len(test)
+    test_acc = 100. * n_test_correct / k
     return test_acc
 
 def compute_runtime(model):
