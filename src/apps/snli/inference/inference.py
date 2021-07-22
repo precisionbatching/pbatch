@@ -146,7 +146,6 @@ model = SNLIClassifier(config, **kwargs).cuda()
 # Load model
 with open(args.model_path, "rb") as f:
     sd = torch.load(f)
-    print(sd.keys())
 model.load_state_dict(sd)
 model.eval()
 

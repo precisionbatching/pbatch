@@ -17,4 +17,4 @@ for b in ${cutlass_bits[@]}; do
     python src/apps/mnist/inference/inference.py --model_path src/apps/mnist/inference/mnist_model.ckpt  --method cutlass --W_bits $b --A_bits $b >> $outfile
 done
 
-python src/plotting/plot_end2end.py $outfile mnist
+python src/plotting/plot_end2end.py $outfile mnist 0
