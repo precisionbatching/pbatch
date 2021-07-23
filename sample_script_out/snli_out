@@ -1,0 +1,14 @@
+module,mnist,pbatch,1,8,69.410664,0.107617
+module,mnist,pbatch,1,16,69.504210,0.132177
+module,mnist,pbatch,1,32,69.504210,0.191133
+module,mnist,pbatch,4,8,73.339570,0.227969
+module,mnist,pbatch,4,16,73.246024,0.309454
+module,mnist,pbatch,4,32,73.246024,0.460049
+module,mnist,pbatch,8,8,75.210477,0.399919
+module,mnist,pbatch,8,16,75.210477,0.542454
+module,mnist,pbatch,8,32,75.210477,0.811970
+module,mnist,cutlass,32,32,74.929841,2.749348
+module,mnist,cutlass,16,16,74.929841,0.979675
+module,mnist,cutlass,8,8,75.116932,0.331336
+module,mnist,cutlass,4,4,44.995323,0.214791
+module,mnist,cutlass,1,1,35.547240,0.161159

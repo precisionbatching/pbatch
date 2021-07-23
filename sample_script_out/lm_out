@@ -1,0 +1,44 @@
+Done. Weight matrix approximation error: 0.052876554932660275
+Done. Weight matrix approximation error: 0.045059178779727066
+module,mnist,pbatch,1,8,287.150607,0.066241
+Done. Weight matrix approximation error: 0.052876554932660275
+Done. Weight matrix approximation error: 0.045059178779727066
+module,mnist,pbatch,1,16,287.150607,0.072724
+Done. Weight matrix approximation error: 0.052876554932660275
+Done. Weight matrix approximation error: 0.045059178779727066
+module,mnist,pbatch,1,32,287.150607,0.091793
+Done. Weight matrix approximation error: 0.011378608837564955
+Done. Weight matrix approximation error: 0.012103055536233283
+module,mnist,pbatch,4,8,95.586739,0.103666
+Done. Weight matrix approximation error: 0.011378608837564955
+Done. Weight matrix approximation error: 0.012103055536233283
+module,mnist,pbatch,4,16,95.586739,0.127230
+Done. Weight matrix approximation error: 0.011378608837564955
+Done. Weight matrix approximation error: 0.012103055536233283
+module,mnist,pbatch,4,32,95.586739,0.170159
+Done. Weight matrix approximation error: 0.0010279301695129076
+Done. Weight matrix approximation error: 0.0011938309471972725
+module,mnist,pbatch,8,8,89.572388,0.155208
+Done. Weight matrix approximation error: 0.0010279301695129076
+Done. Weight matrix approximation error: 0.0011938309471972725
+module,mnist,pbatch,8,16,89.572388,0.191874
+Done. Weight matrix approximation error: 0.0010279301695129076
+Done. Weight matrix approximation error: 0.0011938309471972725
+module,mnist,pbatch,8,32,89.572388,0.269608
+module,mnist,cutlass,32,32,89.969161,0.792779
+module,mnist,cutlass,16,16,89.970729,0.281656
+Done. Weight matrix approximation error: 8.64311e-05
+Done. Weight matrix approximation error: 8.643804e-05
+Done. Weight matrix approximation error: 0.0016639262
+Done. Weight matrix approximation error: 0.0018293137
+module,mnist,cutlass,8,8,90.197908,0.140177
+Done. Weight matrix approximation error: 0.0013927249
+Done. Weight matrix approximation error: 0.0013839963
+Done. Weight matrix approximation error: 0.017085038
+Done. Weight matrix approximation error: 0.016170142
+module,mnist,cutlass,4,4,159.808357,0.109924
+Done. Weight matrix approximation error: 0.008283789
+Done. Weight matrix approximation error: 0.008287292
+Done. Weight matrix approximation error: 0.06893331
+Done. Weight matrix approximation error: 0.05723094
+module,mnist,cutlass,1,1,3539.490659,0.109752
