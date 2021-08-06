@@ -79,8 +79,12 @@ def plot_data(variable_data, negate=False):
     pbatch_metric_and_speedups = sorted(pbatch_metric_and_speedups, key=lambda x:x[1])
     cutlass_metric_and_speedups = sorted(cutlass_metric_and_speedups, key=lambda x:x[1])
 
-    pbatch_metric_and_speedups = get_pareto_points(pbatch_metric_and_speedups, negate=negate)
-    cutlass_metric_and_speedups = get_pareto_points(cutlass_metric_and_speedups, negate=negate)
+    # This sometimes will cut off points if they are not in pareto curve (if using diff hardware than t4)
+    # To avoid this, keep all the points, but sort by quality
+    pbatch_metric_and_speedups = sorted(pbatch_metric_and_speedups, key=lambda x:x[0]* (-1 if not negate else 1))
+    cutlass_metric_and_speedups = sorted(cutlass_metric_and_speedups, key=lambda x:x[0]* (-1 if not negate else 1))
+    #pbatch_metric_and_speedups = get_pareto_points(pbatch_metric_and_speedups, negate=negate)
+    #cutlass_metric_and_speedups = get_pareto_points(cutlass_metric_and_speedups, negate=negate)
 
     print(pbatch_metric_and_speedups)
     print(cutlass_metric_and_speedups)
