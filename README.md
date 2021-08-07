@@ -4,7 +4,7 @@
 This repository contains the source code for PrecisionBatching: Bitserial Decomposition for Efficient Neural Network Inference on GPUs.
 
 # Hardware Requirements
-For general reproducibility, run on a T4 gpu (or a GPU with architecture cc7.5). We have tested on Ubuntu 18.04.5.
+For general reproducibility, run on a T4 gpu (or a GPU with architecture cc7.5). Please use Cuda 10.2. We have tested on Ubuntu 18.04.5.
 
 # Install Conda Environment
 ```
